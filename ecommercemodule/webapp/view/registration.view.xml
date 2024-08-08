@@ -1,0 +1,64 @@
+<mvc:View controllerName="ep.ecommercemodule.controller.registration"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Page id="page" title="{i18n>appTitle}">
+        <content>
+            <HBox id="step1" class="registration-form" width="100%" justifyContent="Center">
+                <VBox id="_IDGenVBox1">
+                    <FlexBox id="_IDGenFlexBox1" alignItems="Center" justifyContent="Center">
+                        <Title id="_IDGenTitle1" text="{i18n>Registration Form}" class="form-header" level="H2" />
+                    </FlexBox>
+                    <FlexBox id="_IDGenFlexBox3" alignItems="Center" justifyContent="Center">
+                        <Title id="_IDGenTitle2" text="{i18n>Step 1}" class="form-header" level="H2" />
+                    </FlexBox>
+                    <HBox id="_IDGenHBox2" width="100%" justifyContent="SpaceBetween">
+                        <VBox id="_IDGenVBox2" width="100%">
+                            <Label id="_IDGenLabel1" text="{i18n>User Name}" class="material-label" />
+                            <Input id="userName" class="material-input" />
+                            
+                            <Label id="_IDGenLabel4" text="{i18n>email Address}" class="material-label" />
+                            <Input id="emailAddress" class="material-input"/>
+                            
+                            <Label id="_IDGenLabel5" text="{i18n>Password}" class="material-label" />
+                            <Input id="password" class="material-input" type="Password"/>
+
+                            <Button id="_IDGenButton1" text="{i18n> Next Step}" press="showNextStep" class="material-button" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </HBox>
+            <HBox id="step2" class="registration-form" width="100%" justifyContent="Center">
+                <VBox id="_step2VBox1">
+                    <FlexBox id="_step2FlexBox1" alignItems="Center" justifyContent="Center">
+                        <Title id="_step2Title1" text="{i18n>Registration Form}" class="form-header" level="H2" />
+                    </FlexBox>
+                    <FlexBox id="_step2FlexBox3" alignItems="Center" justifyContent="Center">
+                        <Title id="_step2Title2" text="{i18n> Step 2}" class="form-header" level="H2" />
+                    </FlexBox>
+                    <HBox id="_step2HBox2" width="100%" justifyContent="SpaceBetween">
+                        <VBox id="_step2VBox2" width="100%">
+                            <Label id="_step2Label1" text="{i18n>First Name}" class="material-label" />
+                            <Input id="firstName" class="material-input" />
+
+                            <Label id="_step2Label2" text="{i18n>Last Name}" class="material-label" />
+                            <Input id="lastName" class="material-input" />
+                            
+                            <Label id="_step2Label4" text="{i18n>Mobile Number}" class="material-label" />
+                            <Input id="mobileNumber" class="material-input" type="Tel"/>
+                            
+                            <Label id="_step2Label5" text="{i18n>Address}" class="material-label" />
+                            <Input id="address" class="material-input" maxLength="100"/>
+
+                            <FlexBox id="_IDGenFlexBox" alignItems="Center" justifyContent="Center" class="submit-button">
+                            <Button id="_step2Button1" text="{i18n> Previous Step}" press="showPrevStep" class="material-button" />
+                            </FlexBox>
+
+                            <FlexBox id="_IDGenFlexBox2" alignItems="Center" justifyContent="Center" class="submit-button">
+                                <Button id="_step2Button2" text="{i18n> Submit}" press="onSubmit" class="material-button" />
+                            </FlexBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>

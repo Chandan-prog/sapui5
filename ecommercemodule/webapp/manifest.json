@@ -1,0 +1,126 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "ep.ecommercemodule",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.14.2",
+      "toolsId": "5c40bff0-88f2-4542-804b-3527f48506f4"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.127.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ep.ecommercemodule.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "ep.ecommercemodule.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "Routeecommerceapp",
+          "pattern": ":?query:",
+          "target": [
+            "Targetregistration"
+          ]
+        },
+        {
+          "name": "registration",
+          "pattern": "registration",
+          "target": [
+            "Targetregistration"
+          ]
+        },
+        {
+          "name": "login",
+          "pattern": "login",
+          "target": [
+            "Targetlogin"
+          ]
+        }
+      ],
+      "targets": {
+        "Targetregistration":{
+          "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "registration",
+            "viewName": "registration"
+        },
+        "Targetlogin":{
+          "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "login",
+            "viewName": "login"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ep.ecommercemodule.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
