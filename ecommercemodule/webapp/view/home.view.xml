@@ -7,6 +7,31 @@
 
     <Page id="homePage" title="{i18n>appTitle}">
         <content>
+             <Toolbar id="productToolbar">
+                <SearchField 
+                    id="searchField" 
+                    placeholder="Search products..." 
+                    liveChange=".onSearch"
+                    width="50%"/>
+                <Select id="categoryFilter" change=".onCategoryFilter">
+                    <items>
+                        <core:Item id="categoryAll" key="" text="All Categories"/>
+                        <core:Item id="categoryElectronics" key="Electronics" text="Electronics"/>
+                        <core:Item id="categoryClothing" key="Clothing" text="Clothing"/>
+                        <core:Item id="categoryBooks" key="Books" text="Books"/>
+                        <core:Item id="categoryAccessories" key="Accessories" text="Accessories"/>
+                        <core:Item id="categoryFootwear" key="Footwear" text="Footwear"/>
+                        <core:Item id="categoryHomeAppliances" key="Home Appliances" text="Home Appliances"/>
+                    </items>
+                </Select>
+                <Select id="sortOrder" change=".onSortOrderChange">
+                    <items>
+                        <core:Item id="sort" key="" text="Sort"/>
+                        <core:Item id="sortAsc" key="asc" text="Price: Low to High"/>
+                        <core:Item id="sortDesc" key="desc" text="Price: High to Low"/>
+                    </items>
+                </Select>
+            </Toolbar>
             <FlexBox
                 id="productFlexBox"
                 direction="Row"
@@ -33,7 +58,7 @@
                                     <Text id="productCategory" text="{category}" class="sapUiSubtitle"/>
                                 </VBox>
                                 <Text id="productDescription" text="{description}" />
-                                <Text id="productPrice" text="Price: {price}"/>
+                                <Text id="productPrice" text="Price: $ {price}"/>
                             </VBox>
                         </f:content>
                     </f:Card>

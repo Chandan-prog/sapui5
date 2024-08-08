@@ -2,8 +2,11 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel", // Correct import
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+    "sap/ui/model/Sorter"
   ],
-  function (Controller, JSONModel) {
+  function (Controller, JSONModel,  Filter, FilterOperator, Sorter) {
     "use strict";
     return Controller.extend("ep.ecommercemodule.controller.home", {
       onInit: function () {
@@ -12,7 +15,7 @@ sap.ui.define(
                 {
                   id: "P001",
                   name: "Laptop",
-                  price: "$1000",
+                  price: 1000,
                   category: "Electronics",
                   description: "High-performance laptop",
                   descriptionList: [
@@ -28,7 +31,7 @@ sap.ui.define(
                 {
                   id: "P002",
                   name: "T-shirt",
-                  price: "$20",
+                  price: 20,
                   category: "Clothing",
                   description: "Comfortable cotton T-shirt",
                   descriptionList: [
@@ -44,7 +47,7 @@ sap.ui.define(
                 {
                   id: "P003",
                   name: "Book",
-                  price: "$15",
+                  price: 15,
                   category: "Books",
                   description: "Inspiring autobiography",
                   descriptionList: [
@@ -60,7 +63,7 @@ sap.ui.define(
                 {
                   id: "P004",
                   name: "Smartphone",
-                  price: "$800",
+                  price: 800,
                   category: "Electronics",
                   description: "Latest model with high-end features",
                   descriptionList: [
@@ -76,7 +79,7 @@ sap.ui.define(
                 {
                   id: "P005",
                   name: "Headphones",
-                  price: "$150",
+                  price: 150,
                   category: "Electronics",
                   description: "Noise-cancelling headphones",
                   descriptionList: [
@@ -92,7 +95,7 @@ sap.ui.define(
                 {
                   id: "P006",
                   name: "Sunglasses",
-                  price: "$80",
+                  price: 80,
                   category: "Accessories",
                   description: "Stylish sunglasses with UV protection",
                   descriptionList: [
@@ -108,7 +111,7 @@ sap.ui.define(
                 {
                   id: "P007",
                   name: "Watch",
-                  price: "$200",
+                  price: 200,
                   category: "Accessories",
                   description: "Elegant wristwatch with leather strap",
                   descriptionList: [
@@ -124,7 +127,7 @@ sap.ui.define(
                 {
                   id: "P008",
                   name: "Shoes",
-                  price: "$120",
+                  price: 120,
                   category: "Footwear",
                   description: "Comfortable running shoes",
                   descriptionList: [
@@ -140,7 +143,7 @@ sap.ui.define(
                 {
                   id: "P009",
                   name: "Jacket",
-                  price: "$150",
+                  price: 150,
                   category: "Clothing",
                   description: "Warm and stylish winter jacket",
                   descriptionList: [
@@ -156,7 +159,7 @@ sap.ui.define(
                 {
                   id: "P010",
                   name: "Bag",
-                  price: "$60",
+                  price: 60,
                   category: "Accessories",
                   description: "Spacious backpack with multiple compartments",
                   descriptionList: [
@@ -172,7 +175,7 @@ sap.ui.define(
                 {
                   id: "P011",
                   name: "Coffee Maker",
-                  price: "$90",
+                  price: 90,
                   category: "Home Appliances",
                   description: "Easy-to-use coffee maker",
                   descriptionList: [
@@ -188,7 +191,7 @@ sap.ui.define(
                 {
                   id: "P012",
                   name: "Blender",
-                  price: "$70",
+                  price: 70,
                   category: "Home Appliances",
                   description: "Powerful blender for smoothies",
                   descriptionList: [
@@ -204,7 +207,7 @@ sap.ui.define(
                 {
                   id: "P013",
                   name: "Tablet",
-                  price: "$400",
+                  price: 400,
                   category: "Electronics",
                   description: "High-resolution screen tablet",
                   descriptionList: [
@@ -220,7 +223,7 @@ sap.ui.define(
                 {
                   id: "P014",
                   name: "Camera",
-                  price: "$600",
+                  price: 600,
                   category: "Electronics",
                   description: "DSLR camera with multiple lenses",
                   descriptionList: [
@@ -236,7 +239,7 @@ sap.ui.define(
                 {
                   id: "P015",
                   name: "Mixer Grinder",
-                  price: "$80",
+                  price: 80,
                   category: "Home Appliances",
                   description: "Efficient mixer grinder for daily use",
                   descriptionList: [
@@ -252,7 +255,7 @@ sap.ui.define(
                 {
                   id: "P016",
                   name: "Microwave",
-                  price: "$130",
+                  price: 130,
                   category: "Home Appliances",
                   description: "Compact microwave oven",
                   descriptionList: [
@@ -268,7 +271,7 @@ sap.ui.define(
                 {
                   id: "P017",
                   name: "Refrigerator",
-                  price: "$500",
+                  price: 500,
                   category: "Home Appliances",
                   description: "Large capacity refrigerator",
                   descriptionList: [
@@ -284,7 +287,7 @@ sap.ui.define(
                 {
                   id: "P018",
                   name: "Toaster",
-                  price: "$40",
+                  price: 40,
                   category: "Home Appliances",
                   description: "Two-slice toaster with adjustable settings",
                   descriptionList: [
@@ -300,7 +303,7 @@ sap.ui.define(
                 {
                   id: "P019",
                   name: "Electric Kettle",
-                  price: "$35",
+                  price: 35,
                   category: "Home Appliances",
                   description: "Fast boiling electric kettle",
                   descriptionList: [
@@ -316,7 +319,7 @@ sap.ui.define(
                 {
                   id: "P020",
                   name: "Air Conditioner",
-                  price: "$700",
+                  price: 700,
                   category: "Home Appliances",
                   description: "Energy-efficient air conditioner",
                   descriptionList: [
@@ -332,7 +335,33 @@ sap.ui.define(
               ],
         });
         this.getView().setModel(oModel);
-      }
+      },
+      onSearch: function (oEvent) {
+        var sQuery = oEvent.getParameter("newValue");
+        var oFilter = new Filter("name", FilterOperator.Contains, sQuery);
+        var oBinding = this.byId("productFlexBox").getBinding("items");
+        oBinding.filter([oFilter]);
+    },
+
+    onCategoryFilter: function (oEvent) {
+        var sKey = oEvent.getParameter("selectedItem").getKey();
+        var oBinding = this.byId("productFlexBox").getBinding("items");
+        var aFilters = [];
+        if (sKey) {
+            aFilters.push(new Filter("category", FilterOperator.EQ, sKey));
+        }
+        oBinding.filter(aFilters);
+    },
+
+    onSortOrderChange: function (oEvent) {
+        var sKey = oEvent.getParameter("selectedItem").getKey();
+        var bDescending = sKey === "desc";
+        var oBinding = this.byId("productFlexBox").getBinding("items");
+
+        var oSorter = new Sorter("price", bDescending);
+        oBinding.sort(oSorter);
+      },
+
     });
   }
 );
