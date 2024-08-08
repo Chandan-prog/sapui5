@@ -43,6 +43,9 @@ sap.ui.define(
             JSON.parse(localStorage.getItem(sEmailAddress)).password
           ) {
             MessageToast.show("Login Successful");
+            localStorage.setItem("loggedInUser",sEmailAddress)
+            const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("home");
           } else {
             MessageToast.show(
               "Password doesnot match. Kindly check your password"
