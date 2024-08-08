@@ -63,3 +63,15 @@
     font-size: 1em;
     color: #888;
 }
+
+.product-image{
+    margin: 20px
+}
+
+.product-details{
+    margin: 25px
+}
+
+.product-details div{
+    padding: 15px
+}

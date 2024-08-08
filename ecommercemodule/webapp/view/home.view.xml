@@ -7,6 +7,9 @@
 
     <Page id="homePage" title="{i18n>appTitle}">
         <content>
+            <FlexBox id="_IDGenFlexBox1Login" alignItems="Center" justifyContent="End">
+                    <Button id="logout-button" text="Logout" press="logoutButtonHandler"/>
+            </FlexBox>
              <Toolbar id="productToolbar">
                 <SearchField 
                     id="searchField" 
@@ -59,6 +62,7 @@
                                 </VBox>
                                 <Text id="productDescription" text="{description}" />
                                 <Text id="productPrice" text="Price: $ {price}"/>
+                                <Button id="productDetails" text="View Details" press=".viewProduct"/>
                             </VBox>
                         </f:content>
                     </f:Card>

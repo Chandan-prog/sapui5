@@ -37,7 +37,6 @@ sap.ui.define(
         const sEmailAddress = oView.byId("emailAddressLogin").getValue();
         if (localStorage.getItem(sEmailAddress)) {
           const sPassword = oView.byId("passwordLogin").getValue();
-          console.log(localStorage.getItem(sEmailAddress));
           if (
             sPassword ===
             JSON.parse(localStorage.getItem(sEmailAddress)).password

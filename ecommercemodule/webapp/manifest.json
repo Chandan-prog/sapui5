@@ -104,6 +104,13 @@
           "target": [
             "Targethome"
           ]
+        },
+        {
+          "name": "productDetail",
+          "pattern": "product/{productId}",
+          "target": [
+            "TargetproductDetail"
+          ]
         }
       ],
       "targets": {
@@ -127,6 +134,13 @@
             "clearControlAggregation": false,
             "viewId": "home",
             "viewName": "home"
+        },
+        "TargetproductDetail":{
+          "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "productDetail",
+            "viewName": "productDetail"
         }
       }
     },
