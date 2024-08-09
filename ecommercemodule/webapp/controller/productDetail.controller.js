@@ -30,15 +30,17 @@ sap.ui.define(
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.navTo("home");
         },
-        onProductPress: function (oEvent) {
-            var oItem = oEvent.getSource();
-            var oContext = oItem.getBindingContext();
-            console.log("Binding Context:", oContext.getObject());
-            var sProductId = oContext.getProperty("id");
-            
+        viewProduct: function (oCard) {
+            var oSelectedProduct = oCard
+              .getSource()
+              .getBindingContext()
+              .getObject();
+            console.log(oSelectedProduct)
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRouter.navTo("productDetail", { productId: sProductId });
-        }
+            oRouter.navTo("productDetail", {
+              productId: oSelectedProduct.id,
+            });
+          },
       });
     }
 );
