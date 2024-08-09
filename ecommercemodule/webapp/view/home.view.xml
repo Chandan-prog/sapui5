@@ -35,39 +35,10 @@
                     </items>
                 </Select>
             </Toolbar>
-            <FlexBox
-                id="productFlexBox"
-                direction="Row"
-                wrap="Wrap"
-                alignItems="Center"
-                justifyContent="SpaceBetween"
-                class="sapUiSmallMargin"
-                items="{/products}">
-                <items>
-                    <f:Card
-                        id="productCard"
-                        class="sapUiTinyMargin"
-                        width="auto"
-                        height="auto">
-                        <f:content>
-                            <VBox id="productVBox" fitContainer="true" class="sapUiSmallMargin">
-                                <Image id="productImage" 
-                                       src="{imageUrl}" 
-                                       width="100%" 
-                                       height="200px" 
-                                       class="sapUiSmallMarginBottom"/>
-                                <VBox id="headerVBox" class="sapUiSmallMarginBottom">
-                                    <Text id="productName" text="{name}" class="sapUiTitle"/>
-                                    <Text id="productCategory" text="{category}" class="sapUiSubtitle"/>
-                                </VBox>
-                                <Text id="productDescription" text="{description}" />
-                                <Text id="productPrice" text="Price: $ {price}"/>
-                                <Button id="productDetails" text="View Details" press=".viewProduct"/>
-                            </VBox>
-                        </f:content>
-                    </f:Card>
-                </items>
-            </FlexBox>
+            <core:Fragment 
+                fragmentName="ep.ecommercemodule.view.relatedProducts" 
+                type="XML" 
+                binding="{/products}"/>
         </content>
     </Page>
 </mvc:View>

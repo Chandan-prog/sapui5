@@ -9,8 +9,8 @@
     <Page id="page" title="{i18n>appTitle}">
         <content>
             <FlexBox id="_IDGenFlexBox1Login" alignItems="Center" justifyContent="SpaceBetween">
-                    <Title id="_IDGenTitle1Login" text="{productModel>/name}" class="form-header" level="H2" />
-                    <Button id="home-button" text="Go to home" press="homeButtonHandler"/>
+                <Title id="_IDGenTitle1Login" text="{productModel>/name}" class="form-header" level="H2" />
+                <Button id="home-button" text="Go to home" press="homeButtonHandler"/>
             </FlexBox>
             <HBox id="product-detail" width="100%" justifyContent="Start">    
                 <VBox id="product-image">
@@ -24,42 +24,10 @@
                     <Text id="productAvailability" text="{productModel>/availability}" />
                 </VBox>
             </HBox>
-            <VBox id="related-products" class="related-products">
-                <Text id="related-product-title" text="{i18n>Related Products}" class="sapUiTitle"/>
-                <FlexBox
-                    id="relatedProductList"
-                    direction="Row"
-                    wrap="Wrap"
-                    alignItems="Center"
-                    justifyContent="SpaceBetween"
-                    class="sapUiSmallMargin"
-                    items="{/products}">
-                    <items>
-                        <f:Card
-                            id="productCard"
-                            class="sapUiTinyMargin"
-                            width="auto"
-                            height="auto">
-                            <f:content>
-                                <VBox id="productVBox" fitContainer="true" class="sapUiSmallMargin">
-                                    <Image id="productImageRelated" 
-                                        src="{imageUrl}" 
-                                        width="100%" 
-                                        height="200px" 
-                                        class="sapUiSmallMarginBottom"/>
-                                    <VBox id="headerVBox" class="sapUiSmallMarginBottom">
-                                        <Text id="productName" text="{name}" class="sapUiTitle"/>
-                                        <Text id="productCategoryRelated" text="{category}" class="sapUiSubtitle"/>
-                                    </VBox>
-                                    <Text id="productDescriptionrelated" text="{description}" />
-                                    <Text id="productPricerelated" text="Price: $ {price}"/>
-                                    <Button id="productDetails" text="View Details" press="viewProduct"/>
-                                </VBox>
-                            </f:content>
-                        </f:Card>
-                    </items>
-            </FlexBox>
-            </VBox>
+            <core:Fragment 
+                fragmentName="ep.ecommercemodule.view.relatedProducts" 
+                type="XML" 
+                binding="{/products}"/>
         </content>
     </Page>
 </mvc:View>
